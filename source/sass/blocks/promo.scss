@@ -1,0 +1,209 @@
+.promo {
+  width: 100%;
+  height: 100%;
+  max-width: 1920px;
+  max-height: 860px;
+  min-width: 1170px;
+  background-color: #d8d8d8;
+  background-image: url("../../img/promo.jpg");
+  background-position: 0 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @media (max-width: $tablet-width) {
+    height: auto;
+    min-width: 768px;
+    min-height: 344px;
+    max-width: 1023px;
+    max-height: 456px;
+    background-image: url("../../img/promo-table.jpg");
+  }
+
+  @media (max-width: $mobile-width) {
+    height: 100%;
+    min-width: 320px;
+    min-height: 235px;
+    max-width: 767px;
+    max-height: 235px;
+    background-size: cover;
+  }
+
+  @media (max-width: $mobile-width) {
+    background-image: url("../../img/promo-mobile.jpg");
+  }
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../../img/promo@2x.jpg");
+
+    @media (max-width: $tablet-width) {
+      background-image: url("../../img/promo-tablet@2x.jpg");
+    }
+
+    @media (max-width: $mobile-width) {
+      background-image: url("../../img/promo-mobile@2x.jpg");
+    }
+  }
+}
+
+.promo--position {
+  margin-bottom: 200px;
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 80px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 280px;
+  }
+}
+
+.promo__wrapper {
+  width: 100%;
+  height: 623px;
+  display: grid;
+  grid-template-rows: 2fr 100px 1fr;
+  grid-template-columns: 1fr 1fr;
+
+  @media (max-width: $tablet-width) {
+    display: flex;
+    flex-direction: column;
+    height: 285px;
+    padding-top: 60px;
+  }
+
+  @media (max-width: $mobile-width) {
+    position: relative;
+    padding-top: 82px;
+  }
+}
+
+.promo__title {
+  @include font($montserrat, normal, 600);
+  font-size: 55px;
+  line-height: 80px;
+  letter-spacing: -1.11px;
+  grid-column: 2;
+  grid-row: 1;
+  width: 45%;
+  margin: 0 0 0 115px;
+  align-self: end;
+  color: $basic-white;
+
+  @media (max-width: $tablet-width) {
+    width: 100%;
+    margin: 0;
+    font-size: 30px;
+    line-height: 45px;
+    letter-spacing: 0;
+    text-align: center;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+.promo__description {
+  @include font($montserrat, normal, 400);
+  font-size: 16px;
+  line-height: 27px;
+  letter-spacing: -0.47px;
+  grid-column: 2;
+  grid-row: 2;
+  width: 38%;
+  margin: 0 0 0 115px;
+  padding-top: 27px;
+  color: $basic-white;
+
+  @media (max-width: $tablet-width) {
+    width: 55%;
+    margin-left: 0;
+    padding-top: 17px;
+    text-align: center;
+    align-self: center;
+  }
+
+  @media (max-width: $mobile-width) {
+    position: absolute;
+    width: calc(100% - 32px);
+    margin-top: 25px;
+    padding: 16px 16px 0 16px;
+    top: 59%;
+    left: 0;
+    font-size: 16px;
+    line-height: 27px;
+    color: $black-rock;
+  }
+}
+
+.promo__button {
+  @include font($montserrat, normal, 700);
+  font-size: 12px;
+  line-height: 15px;
+  align-items: center;
+  letter-spacing: 2px;
+  position: relative;
+  grid-column: 2;
+  grid-row: 3;
+  width: 300px;
+  margin: 40px 0 58px 115px;
+  padding: 30px 0 30px 40px;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: $basic-apricot;
+  color: $basic-white;
+
+  @media (max-width: $tablet-width) {
+    @include font($montserrat, normal, 500);
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 2px;
+    width: 210px;
+    margin: 11px 0 0 0;
+    padding: 19px 0 19px 40px;
+    padding-top: 17px;
+    align-self: center;
+  }
+
+  @media (max-width: $mobile-width) {
+    position: absolute;
+    width: 228px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 20px 20px 19px 40px;
+    top: 99%;
+    font-size: 10px;
+    line-height: 12px;
+  }
+}
+
+.promo__button:hover,
+.promo__button:focus {
+  @media (min-width: $desktop-width) {
+    background-color: $special-cinnamon;
+  }
+}
+
+.promo__button:active {
+  @media (max-width: $tablet-width) {
+    background-color: $special-cinnamon;
+  }
+}
+
+.promo__button::after {
+  content: "";
+  position: absolute;
+  top: 30px;
+  right: 39px;
+  width: 16px;
+  height: 16px;
+  background: url("../../img/arrow-right.svg");
+
+  @media (max-width: $tablet-width) {
+    top: 16px;
+  }
+}

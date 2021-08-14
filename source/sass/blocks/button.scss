@@ -1,0 +1,41 @@
+.button {
+  @include font($montserrat, normal, 700);
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 2px;
+  width: 250px;
+  padding: 30px 39px;
+  border: none;
+  text-transform: uppercase;
+  background: $basic-apricot;
+  color: $basic-white;
+
+  @media (max-width: $tablet-width) {
+    @include font($montserrat, normal, 500);
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 2px;
+    width: 250px;
+    padding: 19px 0;
+    align-self: center;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 288px;
+    margin: 0 auto;
+    padding: 19px 0 19px 0;
+  }
+}
+
+.button:hover,
+.button:focus {
+  @media (min-width: $desktop-width) {
+    background-color: $special-cinnamon;
+  }
+}
+
+.button:active {
+  @media (max-width: $tablet-width) {
+    background-color: $special-cinnamon;
+  }
+}

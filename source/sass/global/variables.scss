@@ -1,0 +1,48 @@
+// // Colors
+
+$basic-black: #000000;
+$basic-apricot: #fe7865;
+$basic-white: #ffffff;
+$special-gainsboro: #d8d8d8;
+$special-burger: #dadada;
+$special-snow: #fbf8f8;
+$special-cinnamon: #f17d4b;
+$black-russian: #141517;
+$special-white: rgba(255, 255, 255, 0.7);
+$special-cross: rgba(#141517, 20%);
+$special-black-russian: rgba(#141517, 70%);
+$special-grey: rgba(#141517, 50%);
+$black-rock: #2c2e3f;
+$special-hover: rgba(20, 21, 23, 0.6);
+$special-black-rock: rgba(#2c2e3f, 70%);
+$special-grey-rock: rgba(#2c2e3f, 30%);
+
+// Font
+
+$montserrat: "Montserrat", "Arial", sans-serif;
+
+@mixin font($font, $style: normal, $weight: 400) {
+  font-family: $font;
+  font-style: $style;
+  font-weight: $weight;
+}
+
+// Viewports
+
+$tablet-width: 1023.98px;
+$desktop-width: 1024px;
+$mobile-width: 767.98px;
+
+// //
+
+// .background-retina(@path, @size, @repeat: no-repeat) {
+//   @filename: ~`/(.+)\.(\w+)/.exec(@{path})[1]`;
+//   @extension: ~`/(.+)\.(\w+)/.exec(@{path})[2]`;
+//   background-image: ~`"url(@{filename}.@{extension})"`;
+//   background-repeat: @repeat;
+//   background-size: @size;
+
+//   @media (resolution: 2dppx) {
+//     background-image: ~`"url(@{filename}@2x.@{extension})"`;
+//   }
+// }

@@ -1,0 +1,110 @@
+.tab__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: calc(100% - 750px);
+  min-width: 1170px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+
+  @media (max-width: $tablet-width) {
+    width: 100%;
+    height: auto;
+    min-height: 861px;
+    min-width: 616px;
+    margin-bottom: 100px;
+  }
+
+  @media (max-width: $mobile-width) {
+    min-width: 288px;
+    min-height: 1088px;
+    margin-bottom: 75px;
+  }
+}
+
+.tab__box {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-items: flex-start;
+  align-items: center;
+  width: 77%;
+  padding: 15px 0 15px;
+  border-bottom: 1px solid $special-grey-rock;
+
+  @media (max-width: $tablet-width) {
+    overflow-x: scroll;
+    scrollbar-width: none;
+    flex-wrap: nowrap;
+    width: 748px;
+    margin-left: 20px;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 305px;
+    margin-left: 15px;
+    padding-bottom: 25px;
+  }
+}
+
+.tab__link {
+  @include font($montserrat, normal, 500);
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.415px;
+  margin: 0;
+  margin-right: 99px;
+  padding: 0;
+  border: none;
+  color: $special-grey-rock;
+  background-color: transparent;
+}
+
+// .tab__link:first-child {
+//   @media (max-width: $tablet-width) {
+//     margin-left: 15px;
+//   }
+// }
+
+.tab__link:last-child {
+  margin-right: 0;
+}
+
+.tab__link--current {
+  @include font($montserrat, normal, 500);
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.415px;
+  border: none;
+  color: $basic-apricot;
+}
+
+.tab__list {
+  margin: 66px 0 20px 0;
+  padding: 0;
+
+  @media (max-width: $tablet-width) {
+    margin: 31px 0 20px 0;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin: 26px 0 20px 0;
+  }
+}
+
+.tab__item {
+  display: none;
+  flex-wrap: wrap;
+  position: relative;
+
+  @media (max-width: $tablet-width) {
+    flex-direction: column;
+  }
+}
+
+.tab__item--current {
+  display: flex;
+
+  @media (max-width: $mobile-width) {
+    display: block;
+  }
+}

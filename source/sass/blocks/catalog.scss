@@ -114,4 +114,8 @@
 
 .catalog__item:last-child {
   margin-right: 0;
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 25px;
+  }
 }

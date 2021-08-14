@@ -180,6 +180,17 @@
   padding-left: 25px;
 }
 
+.main-nav__list .contact-info {
+  font-size: 18px;
+  padding-top: 36px;
+  padding-bottom: 32px;
+  color: $black-russian;
+
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
+}
+
 .main-nav__item:focus,
 .main-nav__item:hover {
   color: $special-cinnamon;

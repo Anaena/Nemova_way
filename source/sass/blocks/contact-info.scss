@@ -1,15 +1,9 @@
 .contact-info {
   @include font($montserrat, normal, 400);
-  font-size: 18px;
   line-height: 32px;
-  display: block;
-  padding-top: 36px;
-  padding-bottom: 32px;
-  text-align: center;
-  color: $black-russian;
+  text-decoration: none;
 
   @media (max-width: $tablet-width) {
-    display: none;
   }
 }
 

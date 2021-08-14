@@ -21,13 +21,13 @@
     height: auto;
     min-height: 861px;
     min-width: 616px;
-    margin-bottom: 100px;
+    margin-bottom: 85px;
   }
 
   @media (max-width: $mobile-width) {
     min-width: 288px;
     min-height: 1088px;
-    margin-bottom: 75px;
+    margin-bottom: 83px;
   }
 }
 
@@ -51,7 +51,7 @@
   @media (max-width: $mobile-width) {
     width: 305px;
     margin-left: 15px;
-    padding-bottom: 25px;
+    padding: 12px 0 15px;
   }
 }
 

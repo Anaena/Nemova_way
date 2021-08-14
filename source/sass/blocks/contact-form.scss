@@ -1,0 +1,30 @@
+.contact-form__wrapper {
+  display: flex;
+  width: calc(100% - 750px);
+  min-width: 1170px;
+  margin: 0 auto;
+
+  @media (max-width: $tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% - 42px);
+    height: auto;
+    min-height: 861px;
+    min-width: 616px;
+    margin-bottom: 100px;
+  }
+
+  @media (max-width: $mobile-width) {
+    display: block;
+    width: calc(100% - 32px);
+    margin-bottom: 50px;
+    min-width: 288px;
+  }
+}
+
+.contact-form__title {}
+
+.contact-form__description {}
+
+.contact-form__form {}
+

@@ -19,27 +19,13 @@
 }
 
 .country-card__title {
-  @include font($montserrat, normal, 600);
-  font-size: 55px;
-  line-height: 80px;
-  letter-spacing: -1.25px;
   position: relative;
   width: 100%;
   margin: 17px 0 50px 0;
-  color: $black-rock;
 
   @media (max-width: $tablet-width) {
     width: 100%;
     margin: 0;
-    font-size: 30px;
-    line-height: 45px;
-    letter-spacing: 0;
-    text-align: center;
-  }
-
-  @media (max-width: $mobile-width) {
-    font-size: 24px;
-    line-height: 36px;
   }
 }
 
@@ -102,5 +88,21 @@
     padding-left: 0;
     left: 8%;
     bottom: -47px;
+  }
+}
+
+.country-card__button {
+  width: 250px;
+  padding: 30px 39px;
+
+  @media (max-width: $tablet-width) {
+    width: 250px;
+    padding: 19px 0;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 288px;
+    margin: 0 auto;
+    padding: 19px 0 19px 0;
   }
 }

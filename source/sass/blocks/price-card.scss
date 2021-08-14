@@ -1,0 +1,113 @@
+.price-card {
+  border: 1px solid $special-border;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+.price-card--current {
+  border: 3px solid $basic-apricot;
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding-top: 10px;
+}
+
+.price-card__title {
+  @include font($montserrat, normal, 600);
+  font-size: 28px;
+  line-height: 38px;
+  letter-spacing: -1.27px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 17px;
+  color: $special-black-russian;
+}
+
+.price-card--current .price-card__title {
+  margin-bottom: 20px;
+  letter-spacing: 0;
+  color: $basic-apricot;
+}
+
+.price-card__title span {
+  @include font($montserrat, normal, 700);
+  font-size: 25px;
+  line-height: 34px;
+  letter-spacing: 0.2px;
+}
+
+.price-card__description {
+  @include font($montserrat, normal, 400);
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 32px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid $special-grey-rock;
+  box-sizing: border-box;
+  color: $black-rock;
+}
+
+.price-card--current .price-card__description {
+  border-bottom: 1px solid $special-apricot;
+  mix-blend-mode: normal;
+}
+
+.price-card__list {
+  margin: 0;
+  margin-bottom: 13px;
+  padding: 0 10px 0 28px;
+  list-style: none;
+}
+
+.price-card--current .price-card__list {
+  margin-bottom: 42px;
+}
+
+.price-card__item {
+  @include font($montserrat, normal, 400);
+  font-size: 16px;
+  line-height: 32px;
+  position: relative;
+  margin-bottom: 15px;
+  color: $black-rock;
+}
+
+.price-card__item::before {
+  position: absolute;
+  content: "";
+  top: 9px;
+  left: -29px;
+  width: 14px;
+  height: 12px;
+  background-image: url("../../img/mark.svg");
+}
+
+.price-card--current .price-card__item {
+  margin-bottom: 0.7em;
+}
+
+.price-card--current .price-card__item::before {
+  position: absolute;
+  content: "";
+  top: 10px;
+  left: -27px;
+  width: 14px;
+  height: 12px;
+  background-image: url("../../img/mark-current.svg");
+}
+
+.price-card__button {
+  width: 310px;
+  margin-bottom: 18px;
+  padding: 30px 40px;
+
+  @media (max-width: $tablet-width) {
+    width: 250px;
+    padding: 19px 0;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 288px;
+    margin: 0 auto;
+    padding: 19px 0 19px 0;
+  }
+}

@@ -1,0 +1,115 @@
+.price--position {
+  margin-top: -270px;
+  margin-bottom: 140px;
+}
+
+.price__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 80px min-content 2fr;
+  grid-column-gap: 30px;
+  width: calc(100% - 750px);
+  min-width: 1170px;
+  margin: 0 auto;
+}
+
+.price__title {
+  position: relative;
+  margin: 40px 0 35px 65px;
+  grid-column: 3;
+  grid-row: 2;
+
+  @media (max-width: $tablet-width) {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.price__title::after {
+  @media (min-width: $desktop-width) {
+    content: "";
+    position: absolute;
+    top: 96px;
+    left: 0;
+    width: 175px;
+    height: 3px;
+    background: $basic-apricot;
+  }
+}
+
+.price__description {
+  @include font($montserrat, normal, 400);
+  font-size: 16px;
+  line-height: 27px;
+  width: 82%;
+  grid-column: 3;
+  grid-row: 3;
+  margin: 16px 0 65px 65px;
+  color: $special-black-rock;
+
+  @media (max-width: $tablet-width) {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 18px;
+    text-align: center;
+  }
+}
+
+.price__contacts {
+  grid-column: 3;
+  grid-row: 3;
+  height: 90px;
+  margin: 0;
+  padding: 0;
+  align-self: end;
+  margin-bottom: 81px;
+}
+
+.price__contact-title {
+  @include font($montserrat, normal, 500);
+  font-size: 22px;
+  line-height: 34px;
+  grid-column: 3;
+  grid-row: 4;
+  margin: 0 0 10px 60px;
+  padding: 0;
+  text-align: center;
+  color: $black-russian;
+}
+
+.price__phone {
+  @include font($montserrat, normal, 400);
+  font-size: 20px;
+  line-height: 32px;
+  margin: 0;
+  margin-left: 60px;
+  padding: 0;
+  text-align: start;
+  text-decoration: none;
+  color: $basic-black;
+}
+
+.price__phone .contact-info__phone-icon {
+  margin-right: 15px;
+  stroke: $basic-apricot;
+}
+
+.price__list {
+  display: flex;
+  grid-column: 1/3;
+  grid-row: 1/-1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.price__item {
+  display: flex;
+  flex-direction: column;
+  width: calc((100% - 30px) / 2);
+  padding: 15px 30px 10px;
+}
+
+.price__item:not(:last-child) {
+  margin-right: 30px;
+}

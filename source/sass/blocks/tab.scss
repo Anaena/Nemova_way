@@ -1,3 +1,12 @@
+.tab {
+  @media (min-width: $desktop-width) {
+    min-height: 1220px;
+    background-image: url("../../img/map.svg");
+    background-repeat: no-repeat;
+    background-position: center 136px;
+  }
+}
+
 .tab__wrapper {
   display: flex;
   flex-direction: column;

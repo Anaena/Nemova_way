@@ -1,0 +1,24 @@
+.next-trip__title {
+  @include font($montserrat, normal, 600);
+  font-size: 18px;
+  line-height: 28px;
+  margin: 0;
+  margin-bottom: 25px;
+  color: $black-russian;
+}
+
+.next-trip__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.next-trip__item {
+  @include font($montserrat, normal, 400);
+  font-size: 14px;
+  line-height: 17px;
+  margin: 0 33px 10px 0;
+  color: $special-grey;
+}

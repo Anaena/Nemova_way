@@ -10,7 +10,8 @@
   }
 }
 
-.price-card--current {
+.price-card:hover,
+.price-card:focus {
   border: 3px solid $basic-apricot;
   box-sizing: border-box;
   border-radius: 6px;
@@ -45,7 +46,8 @@
   }
 }
 
-.price-card--current .price-card__title {
+.price-card:hover .price-card__title,
+.price-card:focus .price-card__title {
   margin-bottom: 20px;
   letter-spacing: 0;
   color: $basic-apricot;
@@ -68,7 +70,8 @@
   }
 }
 
-.price-card--current .price-card__title-price {
+.price-card:hover .price-card__title-price,
+.price-card:focus .price-card__title-price {
   @media (max-width: $tablet-width) {
     padding-right: 3px;
   }
@@ -91,7 +94,8 @@
   }
 }
 
-.price-card--current .price-card__description {
+.price-card:hover .price-card__description,
+.price-card:focus .price-card__description {
   border-bottom: 1px solid $special-apricot;
   mix-blend-mode: normal;
 }
@@ -109,7 +113,8 @@
   }
 }
 
-.price-card--current .price-card__list {
+.price-card:hover .price-card__list,
+.price-card:focus .price-card__list {
   margin-bottom: 42px;
 
   @media (max-width: $tablet-width) {
@@ -140,7 +145,8 @@
   background-image: url("../../img/mark.svg");
 }
 
-.price-card--current .price-card__item {
+.price-card:hover .price-card__item,
+.price-card:focus .price-card__item {
   margin-bottom: 0.7em;
 
   @media (max-width: $tablet-width) {
@@ -148,7 +154,8 @@
   }
 }
 
-.price-card--current .price-card__item:first-child {
+.price-card:hover .price-card__item:first-child,
+.price-card:focus .price-card__item:first-child {
   margin-bottom: 0.7em;
 
   @media (max-width: $tablet-width) {
@@ -156,7 +163,8 @@
   }
 }
 
-.price-card--current .price-card__item::before {
+.price-card:hover .price-card__item::before,
+.price-card:focus .price-card__item::before {
   position: absolute;
   content: "";
   top: 10px;

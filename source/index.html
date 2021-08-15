@@ -331,13 +331,14 @@
         <h3 class="contact-form__title">У Вас остались вопросы?</h3>
         <p class="contact-form__description">Оставьте свой номер или e-mail и мы свяжемся с Вами</p>
         <form class="contact-form__form form" action="#" method="post">
-          <label class="form__label">
-            <input class="form__item form__item--phone" type="tel" name="phone" placeholder="Введите 10 цифр номера" required>
-          </label>
-          <label class="form__label">
-            <input class="form__item form__item--email" type="email" name="email" placeholder="E-mail">
-          </label>
-          <button class="form__button" type="submit">отправить</button>
+          <div class="form__wrapper">
+            <label class="visually-hidden" for="phone">Введите номер телефона</label>
+            <input class="form__item form__item--phone" id="phone" type="tel" value="" name="phone" placeholder="Введите 10 цифр номера"
+              required>
+            <label class="visually-hidden" for="email">Введите e-mail</label>
+            <input class="form__item form__item--email" id="email" type="email" name="email" placeholder="E-mail">
+          </div>
+          <button class="form__button button" type="submit" aria-label="нажмите кнопку чтобы отправить форму">отправить</button>
         </form>
       </div>
     </section>
@@ -348,30 +349,30 @@
         <h3 class="next-trip__title">Следующие путешествия</h3>
         <ul class="next-trip__list">
           <li class="next-trip__item">Марсель</li>
-          <li class="next-trip__item">Ним</li>
-          <li class="next-trip__item">Монпелье</li>
-          <li class="next-trip__item">Барселона</li>
-          <li class="next-trip__item">Пальма</li>
           <li class="next-trip__item">Сардиния</li>
-          <li class="next-trip__item">Палермо</li>
-          <li class="next-trip__item">Катания</li>
-          <li class="next-trip__item">Неаполь</li>
-          <li class="next-trip__item">Рим</li>
           <li class="next-trip__item">Корс</li>
+          <li class="next-trip__item">Ним</li>
+          <li class="next-trip__item">Палермо</li>
           <li class="next-trip__item">Ницца</li>
+          <li class="next-trip__item">Монпелье</li>
+          <li class="next-trip__item">Катания</li>
           <li class="next-trip__item">Монако</li>
+          <li class="next-trip__item">Барселона</li>
+          <li class="next-trip__item">Неаполь</li>
           <li class="next-trip__item">Динь-ле-Бен</li>
+          <li class="next-trip__item">Пальма</li>
+          <li class="next-trip__item">Рим</li>
           <li class="next-trip__item">Гренобль</li>
         </ul>
       </div>
       <div class="page-footer__contacts our-contacts">
         <h3 class="our-contacts__title">Наши контакты</h3>
-        <a class="our-contacts__item contact-info" href="mailto:puteshestviemechta@gmail.ru">
+        <a class="our-contacts__item our-contacts__item--mail contact-info" href="mailto:puteshestviemechta@gmail.ru">
           <svg class="contact-info__mail-icon" width="26" height="20">
             <use xlink:href="img/sprite.svg#mail"></use>
           </svg>
           puteshestviemechta@gmail.ru</a>
-        <a class="our-contacts__item contact-info" href="tel:+749978468446" aria-label="Номер телефона для связи">
+        <a class="our-contacts__item our-contacts__item--phone contact-info" href="tel:+749978468446" aria-label="Номер телефона для связи">
           <svg class="contact-info__phone-icon" width="30" height="30">
             <use xlink:href="img/sprite.svg#phone"></use>
           </svg>
@@ -392,14 +393,12 @@
     <section class="popup">
       <h2 class="popup__title">Купить тур</h2>
       <form class="popup__form form" action="#" method="post">
-        <label class="form__label">
-          <input class="form__item form__item--phone" type="tel" name="phone" placeholder="Введите 10 цифр номера"
-            required>
-        </label>
-        <label class="form__label">
-          <input class="form__item form__item--email" type="email" name="email" placeholder="E-mail">
-        </label>
-        <button class="form__button" type="submit">отправить</button>
+        <label class="visually-hidden" for="popup-phone">Введите номер телефона</label>
+        <input class="form__item form__item--phone" id="popup-phone" type="tel" name="phone" autofocus placeholder="Введите 10 цифр номера"
+          required>
+        <label class="visually-hidden" for="popup-email">Введите e-mail</label>
+        <input class="form__item form__item--email" id="popup-email" type="email" name="email" placeholder="E-mail">
+        <button class="form__button" type="submit"  aria-label="нажмите кнопку чтобы отправить форму">отправить</button>
       </form>
       <button class="popup__close" type="button" aria-label="Нажми чтобы закрыть окно"></button>
     </section>

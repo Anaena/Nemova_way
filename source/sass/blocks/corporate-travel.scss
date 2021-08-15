@@ -1,0 +1,18 @@
+.corporate-travel__title {
+  @include font($montserrat, normal, 600);
+  font-size: 18px;
+  line-height: 32px;
+  margin: 0;
+  margin-bottom: 20px;
+  color: $black-russian;
+}
+
+.corporate-travel__description {
+  @include font($montserrat, normal, 400);
+  font-size: 14px;
+  line-height: 24px;
+  width: 97%;
+  margin: 0;
+  padding: 0;
+  color: $special-grey;
+}

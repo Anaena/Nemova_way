@@ -1,0 +1,29 @@
+.our-contacts__title {
+  @include font($montserrat, normal, 600);
+  font-size: 18px;
+  line-height: 32px;
+  margin: 0;
+  margin-bottom: 25px;
+  color: $black-russian;
+}
+
+.our-contacts__item {
+  font-size: 16px;
+  text-decoration-line: underline;
+  color: $basic-apricot;
+}
+
+.our-contacts__item--mail {
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.our-contacts__item:not(:last-child) {
+  margin-bottom: 21px;
+}
+
+.our-contacts__item .contact-info__phone-icon {
+  margin-right: 8px;
+  vertical-align: top;
+  stroke: $hawkes-blue;
+}

@@ -191,6 +191,10 @@
   }
 }
 
+.main-nav__item .contact-info__phone-icon {
+  stroke: $black-russian;
+}
+
 .main-nav__item:focus,
 .main-nav__item:hover {
   color: $special-cinnamon;

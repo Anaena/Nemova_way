@@ -1,11 +1,40 @@
-.form {}
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
 
-.form__label {}
+.form__wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
 
-.form__item {}
+.form__item {
+  width: calc((100% - 19px) / 2);
+  margin-bottom: 28px;
+  padding: 16px 15px 15px 15px;
+  border: 1px solid $special-grey-rock;
+  box-sizing: border-box;
 
-.form__item--phone {}
+  &::placeholder {
+    @include font($montserrat, normal, 400);
+    font-size: 14px;
+    line-height: 17px;
+    color: $black-russian;
+  }
+}
 
-.form__item--email {}
+.form__item--phone {
+  margin-right: 18px;
+  padding: 16px 15px 15px 51px;
+}
 
-.form__button {}
+.form__button {
+  width: 176px;
+  padding: 18px 39px 17px 40px;
+}

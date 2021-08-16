@@ -5,7 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Way - Путешествие по Европе</title>
-  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style.min.css" rel="stylesheet">
+  <link rel="preload" href="css/style.min.css" as="style">
+  <link rel="preload" href="js/script.min.js" as="script">
+  <link rel="preload" href="img/promo@2x.jpg" as="image">
+  <link rel="preload" href="fonts/montserrat-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/montserrat-semibold.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 
 <body class="page__body">
@@ -43,8 +48,9 @@
     <section class="promo promo--position">
       <div class="promo__wrapper">
         <h2 class="promo__title">Путешествие по Европе</h2>
-        <p class="promo__description">В этом туре вы откроете для себя Европу в новом свете. Вас ждет: море, горы, а&nbsp;также
-           потрясающая красота природы.</p>
+        <p class="promo__description">В этом туре вы откроете для себя Европу в новом свете. Вас ждет: море, горы,
+          а&nbsp;также потрясающая красота природы.
+        </p>
         <a class="promo__button" href="#tabbuttons" aria-label="нажми чтобы подобрать тур">смотреть тур</a>
       </div>
     </section>
@@ -130,14 +136,14 @@
       <h2 class="visually-hidden">Карточки стран</h2>
       <div class="tab__wrapper">
         <div class="tab__box" id="tabbuttons">
-          <button class="tab__link tab__link--current" aria-label="Узнать подробнее о Греция">Греция</button>
-          <button class="tab__link" aria-label="Узнать подробнее о Албания">Албания</button>
-          <button class="tab__link" aria-label="Узнать подробнее о Македония">Македония</button>
-          <button class="tab__link" aria-label="Узнать подробнее о Черногория">Черногория</button>
-          <button class="tab__link" aria-label="Узнать подробнее о Хорватия">Хорватия</button>
+          <button class="tab__link tab__link--current" aria-label="Узнать подробнее о Греция" id="greece">Греция</button>
+          <button class="tab__link" aria-label="Узнать подробнее о Албания" id="albania">Албания</button>
+          <button class="tab__link" aria-label="Узнать подробнее о Македония" id="macedonia">Македония</button>
+          <button class="tab__link" aria-label="Узнать подробнее о Черногория" id="montenegro">Черногория</button>
+          <button class="tab__link" aria-label="Узнать подробнее о Хорватия" id="croatia">Хорватия</button>
         </div>
         <ul class="tab__list">
-          <li class="tab__item tab__item--current country-card" id="greece">
+          <li class="tab__item tab__item--current country-card">
             <div class="country-card__box">
               <h3 class="country-card__title title">Греция</h3>
               <p class="country-card__description">На севере Греции находится один из крупнейших комплексов монастырей,
@@ -145,7 +151,7 @@
                 Этот монастырь основная цель нашего путешествия в Греции. После покарения скал из песчанника и обломочной
                 горной породы, достигающих в высоту 600 метров, наградой будет неописуемая красота природы и атмосфера, царящая
                 в монастырях Метеоры.</p>
-              <button class="country-card__button button" aria-label="Нажми чтобы купить тур">купить тур сейчас</button>
+              <button class="country-card__button button button--buy" aria-label="Нажми чтобы купить тур">купить тур сейчас</button>
             </div>
             <picture>
               <source type="image/webp" media="(max-width: 767px)" srcset="img/greece-mobile.webp 1x, img/greece-mobile@2x.webp 2x">
@@ -163,20 +169,20 @@
                   потрясает масштаб. Огромная территория, высоко в горах. Ощущение такое, как будто стоишь на краю
                   света!
                 </p>
-                <img class="comments__avatar" src="img/avatar-greece.jpg" width="37" height="38" srcset="img/avatar-greece@2x.jpg 2x"
+                <img class="comment__avatar" src="img/avatar-greece.jpg" width="37" height="38" srcset="img/avatar-greece@2x.jpg 2x"
                   alt="Фотография Влады Голициной">
                 <cite class="comment__author">Влада Голицина</cite>
               </blockquote>
             </div>
           </li>
-          <li class="tab__item country-card" id="albania">
-            <h3 class="country-card__title title">Албания</h3>
+          <li class="tab__item country-card">
             <div class="country-card__box">
+              <h3 class="country-card__title title">Албания</h3>
               <p class="country-card__description">В Албании мы посетим Курорт Ксамиль. Этот курорт поразит вас чистейшей водой и
                 удивительным пляжем. Вначале кажется, что на пляже вас встречает обычный, правда невероятно белоснежный и слишком
                 крупный песок. Однако, присмотревшись, можно понять, что это не песок, а камни, перетёртые до такого мелкого
                 состояния.</p>
-              <button class="country-card__button button" aria-label="Нажми чтобы купить тур">купить тур сейчас</button>
+              <button class="country-card__button button button--buy" aria-label="Нажми чтобы купить тур">купить тур сейчас</button>
             </div>
             <picture>
               <source type="image/webp" media="(max-width: 767px)" srcset="img/albania-mobile.webp 1x, img/albania-mobile@2x.webp 2x">
@@ -187,24 +193,24 @@
               <img class="country-card__img" src="img/albania.jpg" width="430" height="596" srcset="img/albania@2x.jpg 2x"
                       alt="Вид сверху на море и городской пляж">
             </picture>
-            <div class="country-card__comment comments">
-              <h3 class="comments__title">Отзывы</h3>
-              <blockquote class="comments__item">
+            <div class="country-card__comment comment">
+              <h3 class="comment__title">Отзывы</h3>
+              <blockquote class="comment__item">
                 <p class="comment__text">Замечательный курорт, обязательно стоит посетить. В следующий раз возьму с собой сестру, чтобы тоже смогла
                   вкусить все красоты природы :)</p>
-                <img class="comments__avatar" src="img/avatar-albania.jpg" width="37" height="38" srcset="img/avatar-albania@2x.jpg 2x"
+                <img class="comment__avatar" src="img/avatar-albania.jpg" width="37" height="38" srcset="img/avatar-albania@2x.jpg 2x"
                   alt="Фотография Маришки">
-                <cite>Маришка</cite>
+                <cite class="comment__author">Маришка</cite>
               </blockquote>
             </div>
           </li>
-          <li class="tab__item country-card" id="macedonia">
-            <h3 class="country-card__title title">Македония</h3>
+          <li class="tab__item country-card">
             <div class="country-card__box">
+              <h3 class="country-card__title title">Македония</h3>
               <p class="country-card__description">В Македонии нашей целью будет посетить Палаошник, который расположился в
                 удивительно красивой лесистой местности возле Охридского озера и Самуиловой твердыни. А также мы заберемся на
                 вершину горы Татичев Камен где находится археологический памятник Кокино в длину около 100 метров.</p>
-              <button class="country-card__button button" aria-label="Нажми чтобы купить тур">купить тур сейчас</button>
+              <button class="country-card__button button button--buy" aria-label="Нажми чтобы купить тур">купить тур сейчас</button>
             </div>
             <picture>
               <source type="image/webp" media="(max-width: 767px)" srcset="img/macedonia-mobile.webp 1x, img/macedonia-mobile@2x.webp 2x">
@@ -215,24 +221,24 @@
               <img class="country-card__img" src="img/macedonia.jpg" width="430" height="596" srcset="img/macedonia@2x.jpg 2x"
                         alt="Фотография какого-то здания у моря">
             </picture>
-            <div class="country-card__comment comments">
-              <h3 class="comments__title">Отзывы</h3>
-              <blockquote class="comments__item">
+            <div class="country-card__comment comment">
+              <h3 class="comment__title">Отзывы</h3>
+              <blockquote class="comment__item">
                 <p class="comment__text">Я бы сказал необычное старое здание. В архитектуре я не разбираюсь, но подъем в гору был очень веселым так как
                   люди оказались легкими и заводными. Красота природы впечатлила, особенно после долгого пути в гору.</p>
-                <img class="comments__avatar" src="img/avatar-macedonia.jpg" width="37" height="38" srcset="img/avatar-macedonia@2x.jpg 2x"
+                <img class="comment__avatar" src="img/avatar-macedonia.jpg" width="37" height="38" srcset="img/avatar-macedonia@2x.jpg 2x"
                   alt="Фотография Михаила Кузьмина">
-                <cite>Михаил Кузьмин</cite>
+                <cite class="comment__author">Михаил Кузьмин</cite>
               </blockquote>
             </div>
           </li>
-          <li class="tab__item country-card" id="montenegro">
-            <h3 class="country-card__title title">Черногория</h3>
+          <li class="tab__item country-card">
             <div class="country-card__box">
+              <h3 class="country-card__title title">Черногория</h3>
               <p class="country-card__description">Черногория удивит нас самым большим в Европе каньоном реки Тара, который в
                 некоторых местах высотой берегов доходит до 1300 метров, а шириной не превышает трех. При этом длина каньона
                 составляет 80 км.</p>
-              <button class="country-card__button button" aria-label="Нажми чтобы купить тур">купить тур сейчас</button>
+              <button class="country-card__button button button--buy" aria-label="Нажми чтобы купить тур">купить тур сейчас</button>
             </div>
             <picture>
               <source type="image/webp" media="(max-width: 767px)" srcset="img/montenegro-mobile.webp 1x, img/montenegro-mobile@2x.webp 2x">
@@ -243,23 +249,23 @@
               <img class="country-card__img" src="img/montenegro.jpg" width="430" height="596" srcset="img/montenegro@2x.jpg 2x"
                           alt="Горная река с красивой голубой водой и густым лесом">
             </picture>
-            <div class="country-card__comment comments">
-              <h3 class="comments__title">Отзывы</h3>
-              <blockquote class="comments__item">
+            <div class="country-card__comment comment">
+              <h3 class="comment__title">Отзывы</h3>
+              <blockquote class="comment__item">
                 <p class="comment__text">Неописуемой красоты каньон! Ничего прекраснее в жизни не видела, разве что в фильмах :) Всем советую</p>
-                <img class="comments__avatar" src="img/avatar-montenegro.jpg" width="37" height="38" srcset="img/avatar-montenegro@2x.jpg 2x"
+                <img class="comment__avatar" src="img/avatar-montenegro.jpg" width="37" height="38" srcset="img/avatar-montenegro@2x.jpg 2x"
                   alt="Фотография Анастасии Мей">
-                <cite>Анастасия Мей</cite>
+                <cite class="comment__author">Анастасия Мей</cite>
               </blockquote>
             </div>
           </li>
-          <li class="tab__item country-card" id="croatia">
-            <h3 class="country-card__title title">Хорватия</h3>
+          <li class="tab__item country-card">
             <div class="country-card__box">
+              <h3 class="country-card__title title">Хорватия</h3>
               <p class="country-card__description">В Хорватии мы посетим необычайную пещеру названную Бередине. Ее подземный мир
                 увлечет вас на 80-ти метровую глубину через 5 освещенных залов, украшенных удивительными нерукотворными
                 скульптурами — сталактитами и сталагмитами — формировавшимися тысячи и тысячи лет.</p>
-              <button class="country-card__button button" aria-label="Нажми чтобы купить тур">купить тур сейчас</button>
+              <button class="country-card__button button button--buy" aria-label="Нажми чтобы купить тур">купить тур сейчас</button>
             </div>
             <picture>
               <source type="image/webp" media="(max-width: 767px)" srcset="img/croatia-mobile.webp 1x, img/croatia-mobile@2x.webp 2x">
@@ -270,14 +276,14 @@
               <img class="country-card__img" src="img/croatia.jpg" width="430" height="596" srcset="img/croatia@2x.jpg 2x"
                             alt="Пещера с голубой водой">
             </picture>
-            <div class="country-card__comment comments">
-              <h3 class="comments__title">Отзывы</h3>
-              <blockquote class="comments__item">
+            <div class="country-card__comment comment">
+              <h3 class="comment__title">Отзывы</h3>
+              <blockquote class="comment__item">
                 <p class="comment__text">Мы поехали всей семьей, я, моя жена и родители. Пещера просто незабываема! А то, что все это формировалось
                   тысячелетиями, мега необычно. Первоначально даже не верилось, но натур ни с чем не спутать по итогу :)</p>
-                <img class="comments__avatar" src="img/avatar-croatia.jpg" width="37" height="38" srcset="img/avatar-croatia@2x.jpg 2x"
+                <img class="comment__avatar" src="img/avatar-croatia.jpg" width="37" height="38" srcset="img/avatar-croatia@2x.jpg 2x"
                   alt="Фотография Владимира Мулицина">
-                <cite>Владимир Мулицин</cite>
+                <cite class="comment__author">Владимир Мулицин</cite>
               </blockquote>
             </div>
           </li>
@@ -308,7 +314,7 @@
               <li class="price-card__item">Завтраки, ужины в отелях и ланчи на природе</li>
               <li class="price-card__item">Экскурсии по удивительно красивым местам Европы</li>
             </ul>
-            <button class="price-card__button button" aria-label="Нажми чтобы купить тур">купить тур сейчас</button>
+            <button class="price-card__button button button--buy" aria-label="Нажми чтобы купить тур">купить тур сейчас</button>
           </li>
           <li class="price__item price-card">
             <h3 class="price-card__title">Экономный <span class="price-card__title-price">$1399</span></h3>
@@ -320,7 +326,7 @@
               <li class="price-card__item">Только завтраки в отелях</li>
               <li class="price-card__item">Экскурсии по удивительно красивым местам Европы</li>
             </ul>
-            <button class="price-card__button button" aria-label="Нажми чтобы купить тур">купить тур сейчас</button>
+            <button class="price-card__button button button--buy" aria-label="Нажми чтобы купить тур">купить тур сейчас</button>
           </li>
         </ul>
       </div>
@@ -374,8 +380,7 @@
         <a class="our-contacts__item our-contacts__item--mail contact-info" href="mailto:puteshestviemechta@gmail.ru">
           <svg class="contact-info__mail-icon" width="26" height="20">
             <use xlink:href="img/sprite.svg#mail"></use>
-          </svg>
-          puteshestviemechta@gmail.ru</a>
+          </svg>puteshestviemechta@gmail.ru</a>
         <a class="our-contacts__item our-contacts__item--phone contact-info" href="tel:+749978468446" aria-label="Номер телефона для связи">
           <svg class="contact-info__phone-icon" width="30" height="30">
             <use xlink:href="img/sprite.svg#phone"></use>
@@ -392,23 +397,24 @@
     </div>
   </footer>
 
-  <!-- Модальное окно -->
-  <template id="popup">
-    <section class="popup">
-      <div class="popup__wrapper">
-        <h2 class="popup__title">Купить тур</h2>
-        <form class="popup__form form" action="#" method="post">
-          <label class="visually-hidden" for="popup-phone">Введите номер телефона</label>
-          <input class="form__item form__item--phone" id="popup-phone" type="tel" value="+7" name="phone" autofocus placeholder="Введите 10 цифр номера"
-            required>
-          <label class="visually-hidden" for="popup-email">Введите e-mail</label>
-          <input class="form__item form__item--email" id="popup-email" type="email" name="email" placeholder="E-mail">
-          <button class="form__button button" type="submit"  aria-label="нажмите кнопку чтобы отправить форму">отправить</button>
-        </form>
-        <button class="popup__close" type="button" aria-label="Нажми чтобы закрыть окно"></button>
-      </div>
-    </section>
-  </template>
+<!-- Модальное окно -->
+
+<section class="popup">
+  <div class="popup__wrapper">
+    <h2 class="popup__title">Купить тур</h2>
+    <form class="popup__form form" action="#" method="post">
+      <label class="visually-hidden" for="popup-phone">Введите номер телефона</label>
+      <input class="form__item form__item--phone" id="popup-phone" type="tel" value="+7" name="phone" autofocus
+        placeholder="Введите 10 цифр номера" required>
+      <label class="visually-hidden" for="popup-email">Введите e-mail</label>
+      <input class="form__item form__item--email" id="popup-email" type="email" name="email" placeholder="E-mail">
+      <button class="form__button button" type="submit"
+        aria-label="нажмите кнопку чтобы отправить форму">отправить</button>
+    </form>
+    <button class="popup__close" type="button" aria-label="Нажми чтобы закрыть окно"></button>
+  </div>
+</section>
+
 
   <!-- Сообщение об успешной отправке формы -->
   <template id="success">
@@ -420,7 +426,7 @@
     </section>
   </template>
 
-  <script src="js/script.js"></script>
+  <script src="js/script.min.js"></script>
 </body>
 
 </html>

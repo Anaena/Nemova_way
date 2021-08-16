@@ -20,6 +20,10 @@
 .our-contacts__item--mail {
   font-size: 14px;
   line-height: 17px;
+
+  @media (max-width: $tablet-width) {
+    text-decoration-line: none;
+  }
 }
 
 .our-contacts__item:not(:last-child) {

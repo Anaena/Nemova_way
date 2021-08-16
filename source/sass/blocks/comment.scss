@@ -41,6 +41,7 @@
 
   @media (max-width: $mobile-width) {
     width: 100%;
+    text-align: center;
   }
 }
 
@@ -60,7 +61,7 @@
   }
 }
 
-.comments__avatar {
+.comment__avatar {
   position: absolute;
   bottom: -3px;
   left: 0;
@@ -80,7 +81,6 @@
   padding-left: 54px;
 
   @media (max-width: $mobile-width) {
-    padding-left: 73px;
+    padding-left: 8px;
   }
 }
-

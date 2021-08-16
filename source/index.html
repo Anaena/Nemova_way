@@ -332,8 +332,8 @@
         <p class="contact-form__description">Оставьте свой номер или e-mail и мы свяжемся с Вами</p>
         <form class="contact-form__form form" action="#" method="post">
           <div class="form__wrapper">
-            <label class="visually-hidden" for="phone">Введите номер телефона</label>
-            <input class="form__item form__item--phone" id="phone" type="tel" value="" name="phone" placeholder="Введите 10 цифр номера"
+            <label class="visually-hidden form__phone" for="phone">Введите номер телефона</label>
+            <input class="form__item form__item--phone" id="phone" type="tel" value="+7" name="phone" placeholder="Введите 10 цифр номера"
               required>
             <label class="visually-hidden" for="email">Введите e-mail</label>
             <input class="form__item form__item--email" id="email" type="email" name="email" placeholder="E-mail">
@@ -349,19 +349,23 @@
         <h3 class="next-trip__title">Следующие путешествия</h3>
         <ul class="next-trip__list">
           <li class="next-trip__item">Марсель</li>
-          <li class="next-trip__item">Сардиния</li>
-          <li class="next-trip__item">Корс</li>
           <li class="next-trip__item">Ним</li>
-          <li class="next-trip__item">Палермо</li>
-          <li class="next-trip__item">Ницца</li>
           <li class="next-trip__item">Монпелье</li>
-          <li class="next-trip__item">Катания</li>
-          <li class="next-trip__item">Монако</li>
           <li class="next-trip__item">Барселона</li>
-          <li class="next-trip__item">Неаполь</li>
-          <li class="next-trip__item">Динь-ле-Бен</li>
           <li class="next-trip__item">Пальма</li>
+        </ul>
+        <ul class="next-trip__list">
+          <li class="next-trip__item">Сардиния</li>
+          <li class="next-trip__item">Палермо</li>
+          <li class="next-trip__item">Катания</li>
+          <li class="next-trip__item">Неаполь</li>
           <li class="next-trip__item">Рим</li>
+        </ul>
+        <ul class="next-trip__list">
+          <li class="next-trip__item">Корс</li>
+          <li class="next-trip__item">Ницца</li>
+          <li class="next-trip__item">Монако</li>
+          <li class="next-trip__item">Динь&#8209;ле&#8209;Бен</li>
           <li class="next-trip__item">Гренобль</li>
         </ul>
       </div>
@@ -391,16 +395,18 @@
   <!-- Модальное окно -->
   <template id="popup">
     <section class="popup">
-      <h2 class="popup__title">Купить тур</h2>
-      <form class="popup__form form" action="#" method="post">
-        <label class="visually-hidden" for="popup-phone">Введите номер телефона</label>
-        <input class="form__item form__item--phone" id="popup-phone" type="tel" name="phone" autofocus placeholder="Введите 10 цифр номера"
-          required>
-        <label class="visually-hidden" for="popup-email">Введите e-mail</label>
-        <input class="form__item form__item--email" id="popup-email" type="email" name="email" placeholder="E-mail">
-        <button class="form__button" type="submit"  aria-label="нажмите кнопку чтобы отправить форму">отправить</button>
-      </form>
-      <button class="popup__close" type="button" aria-label="Нажми чтобы закрыть окно"></button>
+      <div class="popup__wrapper">
+        <h2 class="popup__title">Купить тур</h2>
+        <form class="popup__form form" action="#" method="post">
+          <label class="visually-hidden" for="popup-phone">Введите номер телефона</label>
+          <input class="form__item form__item--phone" id="popup-phone" type="tel" value="+7" name="phone" autofocus placeholder="Введите 10 цифр номера"
+            required>
+          <label class="visually-hidden" for="popup-email">Введите e-mail</label>
+          <input class="form__item form__item--email" id="popup-email" type="email" name="email" placeholder="E-mail">
+          <button class="form__button button" type="submit"  aria-label="нажмите кнопку чтобы отправить форму">отправить</button>
+        </form>
+        <button class="popup__close" type="button" aria-label="Нажми чтобы закрыть окно"></button>
+      </div>
     </section>
   </template>
 
@@ -409,8 +415,8 @@
     <section class="success">
       <div class="success__inner">
         <h2 class="success__title">Форма успешно отправлена, спасибо! :)</h2>
+        <button class="success__close" type="button" aria-label="Нажми чтобы закрыть окно"></button>
       </div>
-      <button class="success__close" type="button" aria-label="Нажми чтобы закрыть окно"></button>
     </section>
   </template>
 

@@ -3,6 +3,7 @@
 @import "global/variables.scss";
 @import "global/global.scss";
 @import "global/fonts.scss";
+@import "global/animation.scss";
 
 // Blocks
 
@@ -28,3 +29,5 @@
 @import "blocks/next-trip.scss";
 @import "blocks/our-contacts.scss";
 @import "blocks/corporate-travel.scss";
+@import "blocks/popup.scss";
+@import "blocks/success.scss";

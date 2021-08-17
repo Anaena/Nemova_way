@@ -1,27 +1,25 @@
 // Navigation
+const navMain = document.querySelector('.main-nav');
+const navToggle = document.querySelector('.main-nav__toggle');
 
-(function () {
-  const navMain = document.querySelector('.main-nav');
-  const navToggle = document.querySelector('.main-nav__toggle');
+navMain.classList.remove('main-nav--nojs');
 
-  navMain.classList.remove('main-nav--nojs');
-
-  navToggle.addEventListener('click', function () {
-    if (navMain.classList.contains('main-nav--closed')) {
-      navMain.classList.remove('main-nav--closed');
-      navMain.classList.add('main-nav--opened');
-    } else {
-      navMain.classList.add('main-nav--closed');
-      navMain.classList.remove('main-nav--opened');
-    }
-  });
-}());
+navToggle.addEventListener('click', () => {
+  if (navMain.classList.contains('main-nav--closed')) {
+    navMain.classList.remove('main-nav--closed');
+    navMain.classList.add('main-nav--opened');
+  } else {
+    navMain.classList.add('main-nav--closed');
+    navMain.classList.remove('main-nav--opened');
+  }
+});
 
 // Tabs
-(function () {
-  const links = document.querySelectorAll('.tab__link');
-  const pages = document.querySelectorAll('.tab__item');
+const links = document.querySelectorAll('.tab__link');
+const pages = document.querySelectorAll('.tab__item');
+const catalogButtons = document.querySelectorAll('.catalog-card__link');
 
+const changeTabs = () => {
   let currentIndex = Array.from(links).findIndex((link) =>
     link.classList.contains('tab__link--current')
   );
@@ -39,79 +37,142 @@
       currentIndex = index;
     });
   });
-})();
+};
 
-// popup
-(function () {
-  const openPopupButtons = document.querySelectorAll('.button--buy');
-  const popup = document.querySelector('.popup');
-  const popupClose = popup.querySelector('.popup__close');
+changeTabs();
 
-  const isEscEvent = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
+catalogButtons.forEach((item) => {
+  item.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    const cardId = evt.currentTarget.dataset.tab;
+    const countryBoxElement = document.querySelector(`${evt.currentTarget.hash}`);
+    const countryTabElement = document.querySelector(`#${cardId}`);
 
-  const onPopupEscKeydown = (evt) => {
-    if (isEscEvent(evt)) {
-      evt.preventDefault();
-      closeModal();
-    }
-  };
+    if (cardId && countryBoxElement) {
+      pages.forEach((page) => {
+        page.classList.remove('tab__item--current');
+      });
+      countryBoxElement.classList.add('tab__item--current');
 
-  // const onModalMessageHide = () => {
-  //   document.removeEventListener('click', () => {
-  //     popup.classList.remove('popup--show');
-  //   })
-  // };
-
-  // const showModalMessage = () => {
-  //   document.addEventListener('click', onModalMessageHide);
-  // };
-
-  const openModal = () => {
-    popup.classList.add('popup--show');
-    document.addEventListener('keydown', onPopupEscKeydown);
-  };
-
-  const closeModal = () => {
-    popup.classList.remove('popup--show');
-
-    document.removeEventListener('keydown', onPopupEscKeydown);
-  };
-
-  openPopupButtons.forEach(btn =>
-    btn.addEventListener('click', () => {
-      openModal();
-    })
-  );
-
-  popupClose.addEventListener('click', closeModal);
-
-}());
-
-// Form
-
-(function () {
-  const contactForm = document.querySelector('.form');
-  const buttonForm = document.querySelector('.form__button');
-  const fields = contactForm.querySelector('input[required]');
-
-  fields.forEach(field => {
-    field.addEventListener('focus', () => {
-      field.classList.remove('form__item--error');
-    });
-  });
-
-  buttonForm.addEventListener('click', function (evt) {
-    let isValid = true;
-
-    fields.forEach(field => {
-      if (!field.value) {
-        isValid = false;
-        field.classList.add('form__item--error');
-      }
-    });
-
-    if (!isValid) {
-      evt.preventDefault();
+      links.forEach((link) => {
+        link.classList.remove('tab__link--current');
+      });
+      countryTabElement.classList.add('tab__link--current');
     }
   });
-}());
+});
+
+// Modal-form
+const openPopupButtons = document.querySelectorAll('.button--buy');
+const popup = document.querySelector('.popup');
+const popupForm = popup.querySelector('.popup__form');
+const itemForm = popup.querySelectorAll('.form__item');
+const itemPhone = popup.querySelector('.form__item--phone');
+const itemEmail = popup.querySelector('.form__item--email');
+const popupClose = popup.querySelector('.popup__close');
+
+const successMessage = document.querySelector('.success');
+const successClose = successMessage.querySelector('.success__close');
+
+const resetForm = () => {
+  itemPhone.value = '';
+  itemEmail.value = '';
+  popupForm.reset();
+
+  itemForm.forEach((item) => {
+    item.classList.remove('form__item--error');
+  });
+};
+
+const onSuccessRemove = () => {
+  successMessage.classList.remove('success--show');
+  resetForm();
+  successClose.removeEventListener('click', onSuccessRemove);
+  document.removeEventListener('keydown', onPopupEscKeydown);
+};
+
+const showSuccessMessage = () => {
+  successMessage.classList.add('success--show');
+  document.addEventListener('keydown', onPopupEscKeydown);
+  successClose.addEventListener('click', onSuccessRemove);
+};
+
+const isEscEvent = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
+
+let isStorageSupport = true;
+let storage = '';
+
+try {
+  storage = localStorage.getItem('phone');
+} catch (err) {
+  isStorageSupport = false;
+}
+
+const onPopupEscKeydown = (evt) => {
+  if (isEscEvent(evt)) {
+    evt.preventDefault();
+    resetForm();
+    onSuccessRemove();
+    closeModal();
+  }
+};
+
+const onModalHide = () => {
+  document.removeEventListener('click', onModalHide);
+};
+
+const hideModal = (evt) => {
+  if (evt.target === popup) {
+    closeModal();
+  }
+};
+
+const closeModal = () => {
+  popup.classList.remove('popup--show');
+  resetForm();
+
+  itemForm.forEach((item) => {
+    item.classList.remove('form__item--error')
+  });
+  popup.removeEventListener('click', hideModal);
+  document.removeEventListener('keydown', onPopupEscKeydown);
+};
+
+const openModal = () => {
+  popup.classList.add('popup--show');
+
+  document.addEventListener('click', hideModal);
+  document.addEventListener('keydown', onPopupEscKeydown);
+};
+
+openPopupButtons.forEach(btn =>
+  btn.addEventListener('click', () => {
+    openModal();
+    if (storage) {
+      itemPhone.value = storage;
+      itemEmail.value = storage;
+    } else {
+      itemPhone.focus();
+    }
+  })
+);
+
+popupClose.addEventListener('click', closeModal);
+
+popupForm.addEventListener('submit', (evt) => {
+  if (!itemPhone.value) {
+    evt.preventDefault();
+    itemPhone.classList.add('form__item--error');
+    }
+  else  if (!itemEmail.value) {
+    evt.preventDefault();
+    itemEmail.classList.add('form__item--error');
+    }
+  else {
+    showSuccessMessage();
+    if (isStorageSupport) {
+      localStorage.setItemlocalStorage.setItem('phone', itemPhone.value);
+      localStorage.setItemlocalStorage.setItem('email', itemEmail.value);
+    }
+  }
+});

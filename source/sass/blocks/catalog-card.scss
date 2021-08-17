@@ -1,4 +1,4 @@
-.catalog-card {
+.catalog-card__link {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,7 +10,7 @@
   line-height: 29px;
   position: absolute;
   width: 155px;
-  height: 28px;
+  min-height: 28px;
   margin: 0 auto;
   bottom: -1px;
   padding: 17px 30px 16px 30px;
@@ -46,7 +46,7 @@
   background: $special-hover;
 }
 
-.catalog-card__hover-link {
+.catalog-card__hover-button {
   @include font($montserrat, normal, 500);
   font-size: 14px;
   line-height: 17px;

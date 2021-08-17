@@ -1,15 +1,33 @@
 .popup {
-  width: 728px;
-  height: 444px;
-  margin: auto;
+  width: 100%;
+  height: 100%;
 
   position: fixed;
   display: none;
 
-  top: 30%;
-  bottom: auto;
+  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
+  z-index: 40;
+}
+
+.popup--show {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.popup__wrapper {
+  position: relative;
+  width: 728px;
+  height: 444px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
 
   color: $grey;
   background-image: url("../../img/buy.jpg");
@@ -17,12 +35,10 @@
   background-position: 0 0;
   background-size: 338px 444px;
   background-color: $special-snow;
-  z-index: 40;
 
   @media (max-width: $mobile-width) {
     width: 320px;
     height: 568px;
-    top: 10%;
     background-image: none;
   }
 
@@ -38,36 +54,16 @@
   }
 }
 
-.popup .form::before {
+.popup__wrapper .form::before {
   position: absolute;
   content: "*";
-  top: 2px;
-  left: 61px;
+  top: 3px;
+  left: 76px;
   color: #fe7865;
 
   @media (max-width: $mobile-width) {
-    top: 5px;
-    left: 15px;
-  }
-}
-
-.popup--show {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  animation: bounce 0.6s;
-}
-
-.popup__wrapper {
-  position: relative;
-  width: 48%;
-  height: auto;
-  padding: 74px 22px;
-
-  @media (max-width: $mobile-width) {
-    width: 320px;
-    height: 568px;
-    padding: 100px 16px;
+    top: 4px;
+    left: 30px;
   }
 }
 
@@ -76,10 +72,23 @@
   font-size: 25px;
   line-height: 43px;
 
-  margin: 0;
-  margin-bottom: 49px;
+  margin: 76px 125px 48px auto;
   text-align: center;
   color: $grey;
+
+  @media (max-width: $mobile-width) {
+    margin: 102px auto 48px;
+  }
+}
+
+.popup__form {
+  width: 54%;
+  margin: 0 0 0 auto;
+
+  @media (max-width: $mobile-width) {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 .popup__form .form__item {

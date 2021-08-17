@@ -4,7 +4,7 @@
   margin: auto;
 
   position: fixed;
-  display: flex;
+  display: none;
   justify-content: flex-end;
   align-items: flex-start;
 
@@ -23,6 +23,10 @@
     top: 10%;
     background-image: none;
   }
+}
+
+.success--show {
+  display: flex;
 }
 
 .success__inner {

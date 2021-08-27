@@ -19,27 +19,25 @@ const links = document.querySelectorAll('.tab__link');
 const pages = document.querySelectorAll('.tab__item');
 const catalogButtons = document.querySelectorAll('.catalog-card__link');
 
-const changeTabs = () => {
-  let currentIndex = Array.from(links).findIndex((link) =>
-    link.classList.contains('tab__link--current')
-  );
 
-  links.forEach((link, index) => {
-    link.addEventListener('click', () => {
+let currentIndex = Array.from(links).findIndex((link) =>
+  link.classList.contains('tab__link--current')
+);
 
-      links[currentIndex].classList.remove('tab__link--current');
-      pages[currentIndex].classList.remove('tab__item--current');
+links.forEach((link, index) => {
+  link.addEventListener('click', () => {
+    popupForm.reset();
+    links[currentIndex].classList.remove('tab__link--current');
+    pages[currentIndex].classList.remove('tab__item--current');
 
 
-      link.classList.add('tab__link--current');
-      pages[index].classList.add('tab__item--current');
+    link.classList.add('tab__link--current');
+    pages[index].classList.add('tab__item--current');
 
-      currentIndex = index;
-    });
+    currentIndex = index;
   });
-};
+});
 
-changeTabs();
 
 catalogButtons.forEach((item) => {
   item.addEventListener('click', (evt) => {

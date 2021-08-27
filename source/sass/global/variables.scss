@@ -36,17 +36,3 @@ $montserrat: "Montserrat", "Arial", sans-serif;
 $tablet-width: 1023.98px;
 $desktop-width: 1024px;
 $mobile-width: 767.98px;
-
-// //
-
-// .background-retina(@path, @size, @repeat: no-repeat) {
-//   @filename: ~`/(.+)\.(\w+)/.exec(@{path})[1]`;
-//   @extension: ~`/(.+)\.(\w+)/.exec(@{path})[2]`;
-//   background-image: ~`"url(@{filename}.@{extension})"`;
-//   background-repeat: @repeat;
-//   background-size: @size;
-
-//   @media (resolution: 2dppx) {
-//     background-image: ~`"url(@{filename}@2x.@{extension})"`;
-//   }
-// }

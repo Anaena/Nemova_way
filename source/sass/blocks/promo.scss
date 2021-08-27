@@ -5,7 +5,7 @@
   max-height: 860px;
   min-width: 1170px;
   background-color: $special-gainsboro;
-  background-image: url("../../img/promo.jpg");
+  background-image: url("../img/promo.jpg");
   background-position: 0 0;
   background-size: cover;
   background-repeat: no-repeat;
@@ -16,7 +16,7 @@
     min-height: 344px;
     max-width: 1023px;
     max-height: 456px;
-    background-image: url("../../img/promo-table.jpg");
+    background-image: url("../img/promo-table.jpg");
   }
 
   @media (max-width: $mobile-width) {
@@ -29,18 +29,18 @@
   }
 
   @media (max-width: $mobile-width) {
-    background-image: url("../../img/promo-mobile.jpg");
+    background-image: url("../img/promo-mobile.jpg");
   }
 
   @media (min-resolution: 2dppx) {
-    background-image: url("../../img/promo@2x.jpg");
+    background-image: url("../img/promo@2x.jpg");
 
     @media (max-width: $tablet-width) {
-      background-image: url("../../img/promo-tablet@2x.jpg");
+      background-image: url("../img/promo-tablet@2x.jpg");
     }
 
     @media (max-width: $mobile-width) {
-      background-image: url("../../img/promo-mobile@2x.jpg");
+      background-image: url("../img/promo-mobile@2x.jpg");
     }
   }
 }
@@ -199,7 +199,7 @@
   right: 39px;
   width: 16px;
   height: 16px;
-  background: url("../../img/icons/arrow-right.svg");
+  background: url("../img/icons/arrow-right.svg");
 
   @media (max-width: $tablet-width) {
     top: 16px;

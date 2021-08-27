@@ -7,24 +7,6 @@
   position: relative;
 }
 
-.form::before {
-  position: absolute;
-  content: "*";
-  top: 4px;
-  left: 15px;
-  color: $basic-apricot;
-
-  @media (max-width: $tablet-width) {
-    top: 4px;
-    left: 14px;
-  }
-
-  @media (max-width: $mobile-width) {
-    top: 2px;
-    left: 15px;
-  }
-}
-
 .form__wrapper {
   width: 100%;
   display: flex;
@@ -66,6 +48,16 @@
   @media (max-width: $mobile-width) {
     width: 100%;
     margin-right: 0;
+  }
+}
+
+.form__item--popup {
+  width: 270px;
+  height: 50px;
+  margin: 0 0 20px;
+
+  @media (max-width: $mobile-width) {
+    width: 288px;
   }
 }
 

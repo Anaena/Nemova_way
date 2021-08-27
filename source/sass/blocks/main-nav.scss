@@ -181,7 +181,7 @@
   padding-left: 25px;
 }
 
-.main-nav__list .contact-info {
+.main-nav__item {
   font-size: 18px;
   padding-top: 36px;
   padding-bottom: 32px;
@@ -192,7 +192,7 @@
   }
 }
 
-.main-nav__item .contact-info__phone-icon {
+.main-nav__icon {
   stroke: $black-russian;
 }
 
@@ -201,7 +201,7 @@
   color: $special-cinnamon;
 }
 
-.main-nav__item:focus .contact-info__phone-icon,
-.main-nav__item:hover .contact-info__phone-icon {
+.main-nav__item:focus .main-nav__icon,
+.main-nav__item:hover .main-nav__icon {
   stroke: $special-cinnamon;
 }

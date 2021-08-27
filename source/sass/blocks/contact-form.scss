@@ -6,7 +6,7 @@
   margin: 0 auto;
   margin-bottom: 100px;
   background: linear-gradient(90deg, $basic-apricot, $special-gainsboro);
-  background-image: url("../../img/form.jpg");
+  background-image: url("../img/form.jpg");
   background-position: 0 0;
   background-size: 844px 455px;
   background-repeat: no-repeat;
@@ -20,7 +20,7 @@
     min-width: 658px;
     margin-bottom: 57px;
     padding-top: 70px;
-    background-image: url("../../img/form-tablet.jpg");
+    background-image: url("../img/form-tablet.jpg");
     background-position: 0 0;
     background-size: contain;
   }
@@ -102,5 +102,23 @@
   @media (max-width: $mobile-width) {
     margin-bottom: 20px;
     text-align: center;
+  }
+}
+
+.contact-form__form::before {
+  position: absolute;
+  content: "*";
+  top: 4px;
+  left: 15px;
+  color: $basic-apricot;
+
+  @media (max-width: $tablet-width) {
+    top: 4px;
+    left: 14px;
+  }
+
+  @media (max-width: $mobile-width) {
+    top: 2px;
+    left: 15px;
   }
 }

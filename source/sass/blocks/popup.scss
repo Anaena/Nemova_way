@@ -30,7 +30,7 @@
   align-items: flex-end;
 
   color: $grey;
-  background-image: url("../../img/buy.jpg");
+  background-image: url("../img/buy.jpg");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: 338px 444px;
@@ -43,7 +43,7 @@
   }
 
   @media (min-resolution: 2dppx) {
-    background-image: url("../../img/buy@2x.jpg");
+    background-image: url("../img/buy@2x.jpg");
     background-position: 0 0;
     background-size: 338px 444px;
     background-repeat: no-repeat;
@@ -54,25 +54,12 @@
   }
 }
 
-.popup__wrapper .form::before {
-  position: absolute;
-  content: "*";
-  top: 3px;
-  left: 76px;
-  color: #fe7865;
-
-  @media (max-width: $mobile-width) {
-    top: 4px;
-    left: 30px;
-  }
-}
-
 .popup__title {
   @include font($montserrat, normal, 600);
   font-size: 25px;
   line-height: 43px;
 
-  margin: 76px 125px 48px auto;
+  margin: 74px 125px 48px auto;
   text-align: center;
   color: $grey;
 
@@ -91,13 +78,16 @@
   }
 }
 
-.popup__form .form__item {
-  width: 270px;
-  height: 50px;
-  margin: 0 0 20px;
+.popup__form::before {
+  position: absolute;
+  content: "*";
+  top: 4px;
+  left: 78px;
+  color: #fe7865;
 
   @media (max-width: $mobile-width) {
-    width: 288px;
+    top: 4px;
+    left: 30px;
   }
 }
 
@@ -125,7 +115,7 @@
   width: 24px;
   height: 24px;
   border: none;
-  background-image: url("../../img/icons/cross.svg");
+  background-image: url("../img/icons/cross.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
 

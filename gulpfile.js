@@ -3,8 +3,9 @@ const plumber = require("gulp-plumber");
 const sourcemap = require("gulp-sourcemaps");
 const sass = require('gulp-sass')(require('sass'));
 const postcss = require("gulp-postcss");
-const autoprefixer = require("autoprefixer");
 const csso = require("postcss-csso");
+const gcmq = require('gulp-group-css-media-queries');
+const autoprefixer = require('autoprefixer');
 const rename = require("gulp-rename");
 const htmlmin = require("gulp-htmlmin");
 const terser = require("gulp-terser");
@@ -32,6 +33,25 @@ const styles = () => {
 }
 
 exports.styles = styles;
+
+// Production styles
+
+const prodStyles = () => gulp.src('source/sass/style.scss')
+  .pipe(plumber())
+  .pipe(sass())
+  .pipe(gcmq())
+  .pipe(postcss([
+    autoprefixer(),
+  ]))
+  .pipe(gulp.dest('build/css'))
+  .pipe(postcss([
+    csso(),
+  ]))
+  .pipe(rename('style.min.css'))
+  .pipe(gulp.dest('build/css'))
+  .pipe(sync.stream());
+
+exports.prodStyles = prodStyles;
 
 // HTML
 
@@ -157,7 +177,7 @@ const build = gulp.series(
   copy,
   optimizeImages,
   gulp.parallel(
-    styles,
+    prodStyles,
     html,
     scripts,
     sprite,
@@ -175,7 +195,7 @@ exports.default = gulp.series(
   copy,
   copyImages,
   gulp.parallel(
-    styles,
+    prodStyles,
     html,
     scripts,
     sprite,

@@ -39,3 +39,27 @@
   vertical-align: top;
   stroke: $hawkes-blue;
 }
+
+.our-contacts__item--mail .our-contacts__icon {
+  margin-right: 15px;
+}
+
+.our-contacts__item:focus,
+.our-contacts__item:hover {
+  color: $special-cinnamon;
+}
+
+.our-contacts__item:focus .our-contacts__icon,
+.our-contacts__item:hover .our-contacts__icon {
+  stroke: $special-cinnamon;
+}
+
+.our-contacts__item:active,
+.our-contacts__item:active .our-contacts__icon {
+  color: $black-rock;
+  stroke: $black-rock;
+}
+
+.our-contacts__item--mail:active .our-contacts__icon {
+  fill: $black-rock;
+}

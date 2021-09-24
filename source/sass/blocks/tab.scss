@@ -37,8 +37,9 @@
   justify-items: flex-start;
   align-items: center;
   width: 77%;
-  padding: 15px 0 15px;
+  padding: 0 0 10px;
   border-bottom: 1px solid $special-grey-rock;
+  list-style: none;
 
   @media (max-width: $tablet-width) {
     overflow-x: scroll;
@@ -50,8 +51,7 @@
 
   @media (max-width: $mobile-width) {
     width: 305px;
-    margin-left: 15px;
-    padding: 12px 0 15px;
+    margin: 12px 0 10px 15px;
   }
 }
 
@@ -61,16 +61,17 @@
   line-height: 24px;
   letter-spacing: -0.415px;
   margin: 0;
-  margin-right: 99px;
   padding: 0;
+  padding-right: 99px;
   border: none;
   color: $special-grey-rock;
   background-color: transparent;
+  text-decoration: none;
   cursor: pointer;
 }
 
-.tab__link:last-child {
-  margin-right: 0;
+li:last-child .tab__link {
+  padding-right: 0;
 }
 
 .tab__link--current {
@@ -83,15 +84,11 @@
 }
 
 .tab__list {
-  margin: 66px 0 20px 0;
+  margin: 50px 0 20px 0;
   padding: 0;
 
   @media (max-width: $tablet-width) {
-    margin: 31px 0 20px 0;
-  }
-
-  @media (max-width: $mobile-width) {
-    margin: 26px 0 20px 0;
+    margin: 15px 0 20px 0;
   }
 }
 

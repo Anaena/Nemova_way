@@ -61,6 +61,16 @@
   }
 }
 
+.form__item:hover,
+.form__item:focus {
+  border: 1px solid $basic-apricot;
+  box-shadow: 0 0 20px $basic-apricot;
+}
+
+.form__item:active {
+  outline: 3px solid $basic-apricot;
+}
+
 .form__button {
   width: 176px;
   padding: 18px 39px 17px 40px;

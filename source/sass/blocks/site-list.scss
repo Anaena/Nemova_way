@@ -40,6 +40,10 @@
   color: $special-cinnamon;
 }
 
+.site-list__item:active .site-list__link {
+  color: $special-apricot;
+}
+
 
 .site-list__link {
   @include font($montserrat, normal, 500);

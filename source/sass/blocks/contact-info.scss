@@ -16,4 +16,8 @@
   vertical-align: middle;
   text-align: center;
   fill: $hawkes-blue;
+
+  @media (max-width: $tablet-width) {
+    margin-right: 15px;
+  }
 }

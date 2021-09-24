@@ -5,12 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Way - Путешествие по Европе</title>
-  <link href="css/style.min.css" rel="stylesheet">
-  <link rel="preload" href="css/style.min.css" as="style">
-  <link rel="preload" href="js/script.min.js" as="script">
   <link rel="preload" href="img/promo@2x.jpg" as="image">
   <link rel="preload" href="fonts/montserrat-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/montserrat-semibold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="js/script.min.js" as="script">
+  <link href="css/style.min.css" rel="stylesheet">
 </head>
 
 <body class="page__body">
@@ -60,8 +59,8 @@
         <p class="catalog__description">Вы можете выбрать полный тур или частичный, с посещением первых 3 мест</p>
         <ul class="catalog__list">
           <li class="catalog__item catalog-card">
-            <a class="catalog-card__link" href="#greece"
-            aria-label="нажми чтобы посмотреть про тур в Грецию" data-tab="tab-greece">
+            <a class="catalog-card__link" data-country="greece" href="#tabbuttons"
+            aria-label="нажми чтобы посмотреть про тур в Грецию">
               <h3 class="catalog-card__item">Греция</h3>
               <picture>
                 <source type="image/webp" media="(max-width: 1023px)"
@@ -78,8 +77,8 @@
             </a>
           </li>
           <li class="catalog__item catalog-card">
-            <a class="catalog-card__link" href="#albania"
-            aria-label="нажми чтобы посмотреть про тур в Албанию" data-tab="tab-albania">
+            <a class="catalog-card__link" data-country="albania" href="#tabbuttons"
+            aria-label="нажми чтобы посмотреть про тур в Албанию">
               <h3 class="catalog-card__item">Албания</h3>
               <picture>
                 <source type="image/webp" media="(max-width: 1023px)"
@@ -96,8 +95,8 @@
             </a>
           </li>
           <li class="catalog__item catalog-card">
-            <a class="catalog-card__link" href="#macedonia"
-            aria-label="нажми чтобы посмотреть про тур в Македонию" data-tab="tab-macedonia">
+            <a class="catalog-card__link" data-country="macedonia" href="#tabbuttons"
+            aria-label="нажми чтобы посмотреть про тур в Македонию">
               <h3 class="catalog-card__item">Македония</h3>
               <picture>
                 <source type="image/webp" media="(max-width: 1023px)"
@@ -114,8 +113,8 @@
             </a>
           </li>
           <li class="catalog__item catalog-card">
-            <a class="catalog-card__link" href="#montenegro"
-            aria-label="нажми чтобы посмотреть про тур в Черногорию" data-tab="tab-montenegro">
+            <a class="catalog-card__link" data-country="montenegro" href="#tabbuttons"
+            aria-label="нажми чтобы посмотреть про тур в Черногорию">
               <h3 class="catalog-card__item">Черногория</h3>
               <picture>
                 <source type="image/webp" media="(max-width: 1023px)"
@@ -132,8 +131,8 @@
             </a>
           </li>
           <li class="catalog__item catalog-card">
-            <a class="catalog-card__link" href="#croatia"
-            aria-label="нажми чтобы посмотреть про тур в Хорватию" data-tab="tab-croatia">
+            <a class="catalog-card__link" data-country="croatia" href="#tabbuttons"
+            aria-label="нажми чтобы посмотреть про тур в Хорватию">
             <h3 class="catalog-card__item">Хорватия</h3>
             <picture>
               <source type="image/webp" media="(max-width: 1023px)"
@@ -152,18 +151,28 @@
         </ul>
       </div>
     </section>
-    <section class="tab">
+    <section class="tab" id="tabbuttons">
       <h2 class="visually-hidden">Карточки стран</h2>
       <div class="tab__wrapper">
-        <div class="tab__box" id="tabbuttons">
-          <button class="tab__link tab__link--current" aria-label="Узнать подробнее о Греция" id="tab-greece">Греция</button>
-          <button class="tab__link" aria-label="Узнать подробнее о Албания" id="tab-albania">Албания</button>
-          <button class="tab__link" aria-label="Узнать подробнее о Македония" id="tab-macedonia">Македония</button>
-          <button class="tab__link" aria-label="Узнать подробнее о Черногория" id="tab-montenegro">Черногория</button>
-          <button class="tab__link" aria-label="Узнать подробнее о Хорватия" id="tab-croatia">Хорватия</button>
-        </div>
+        <ul class="tab__box">
+          <li>
+            <a class="tab__link tab__link--current" href="#" data-country="greece">Греция</a>
+          </li>
+          <li>
+            <a class="tab__link" href="#" data-country="albania">Албания</a>
+          </li>
+          <li>
+            <a class="tab__link" href="#" data-country="macedonia">Македония</a>
+          </li>
+          <li>
+            <a class="tab__link" href="#" data-country="montenegro">Черногория</a>
+          </li>
+          <li>
+            <a class="tab__link" href="#" data-country="croatia">Хорватия</a>
+          </li>
+        </ul>
         <ul class="tab__list">
-          <li class="tab__item tab__item--current country-card" id="greece">
+          <li class="tab__item tab__item--current country-card" data-tab="greece">
             <div class="country-card__box">
               <h3 class="country-card__title title">Греция</h3>
               <p class="country-card__description">На севере Греции находится один из крупнейших комплексов монастырей,
@@ -198,7 +207,7 @@
               </blockquote>
             </div>
           </li>
-          <li class="tab__item country-card" id="albania">
+          <li class="tab__item country-card" data-tab="albania">
             <div class="country-card__box">
               <h3 class="country-card__title title">Албания</h3>
               <p class="country-card__description">В Албании мы посетим Курорт Ксамиль. Этот курорт поразит вас
@@ -230,7 +239,7 @@
               </blockquote>
             </div>
           </li>
-          <li class="tab__item country-card" id="macedonia">
+          <li class="tab__item country-card" data-tab="macedonia">
             <div class="country-card__box">
               <h3 class="country-card__title title">Македония</h3>
               <p class="country-card__description">В Македонии нашей целью будет посетить Палаошник, который
@@ -262,7 +271,7 @@
               </blockquote>
             </div>
           </li>
-          <li class="tab__item country-card" id="montenegro">
+          <li class="tab__item country-card" data-tab="montenegro">
             <div class="country-card__box">
               <h3 class="country-card__title title">Черногория</h3>
               <p class="country-card__description">Черногория удивит нас самым большим в Европе каньоном реки Тара,
@@ -294,7 +303,7 @@
               </blockquote>
             </div>
           </li>
-          <li class="tab__item country-card" id="croatia">
+          <li class="tab__item country-card" data-tab="croatia">
             <div class="country-card__box">
               <h3 class="country-card__title title">Хорватия</h3>
               <p class="country-card__description">В Хорватии мы посетим необычайную пещеру названную Бередине. Ее
@@ -331,18 +340,7 @@
     </section>
     <section class="price price--position" id="price">
       <div class="price__wrapper">
-        <h2 class="price__title title">Цены</h2>
-        <p class="price__description">Специально для Вас мы разработали 2 пакета цен с разными условиями, отталкиваясь
-          от Ваших потребностей и возможностей. Выберите для себя лучший вариант отпуска и отдохните на все 100%!</p>
-        <div class="price__contacts">
-          <p class="price__contact-title">Свяжитесь с&nbsp;нами</p>
-          <a class="price__phone contact-info" href="tel:+749978468446" aria-label="Номер телефона для связи">
-            <svg class="price__icon contact-info__phone-icon" width="30" height="30">
-              <use xlink:href="img/sprite.svg#phone"></use>
-            </svg>
-            +7&nbsp;(499)&nbsp;&#8209;784&#8209;684&#8209;46
-          </a>
-        </div>
+        <h2 class="visually-hidden">Цены</h2>
         <ul class="price__list">
           <li class="price__item price-card price-card--current">
             <h3 class="price-card__title">Комплексный <span class="price-card__title-price">$1999</span></h3>
@@ -370,6 +368,20 @@
               сейчас</a>
           </li>
         </ul>
+        <div class="price__info">
+          <h3 class="price__title title">Цены</h3>
+          <p class="price__description">Специально для Вас мы разработали 2 пакета цен с разными условиями, отталкиваясь
+            от Ваших потребностей и возможностей. Выберите для себя лучший вариант отпуска и отдохните на все 100%!</p>
+          <div class="price__contacts">
+            <p class="price__contact-title">Свяжитесь с&nbsp;нами</p>
+            <a class="price__phone contact-info" href="tel:+749978468446" aria-label="Номер телефона для связи">
+              <svg class="price__icon contact-info__phone-icon" width="30" height="30">
+                <use xlink:href="img/sprite.svg#phone"></use>
+              </svg>
+              +7&nbsp;(499)&nbsp;&#8209;784&#8209;684&#8209;46
+            </a>
+          </div>
+        </div>
       </div>
     </section>
     <section class="contact-form">
@@ -420,7 +432,7 @@
       <div class="page-footer__contacts our-contacts">
         <h3 class="our-contacts__title">Наши контакты</h3>
         <a class="our-contacts__item our-contacts__item--mail contact-info" href="mailto:puteshestviemechta@gmail.ru">
-          <svg class="contact-info__mail-icon" width="26" height="20">
+          <svg class="our-contacts__icon contact-info__mail-icon" width="26" height="20">
             <use xlink:href="img/sprite.svg#mail"></use>
           </svg>puteshestviemechta@gmail.ru</a>
         <a class="our-contacts__item our-contacts__item--phone contact-info" href="tel:+749978468446"
@@ -467,7 +479,7 @@
     </div>
   </section>
 
-  <script src="js/script.min.js"></script>
+  <script src="js/main.min.js" type="module"></script>
 </body>
 
 </html>
